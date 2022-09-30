@@ -19,6 +19,7 @@ jobs:
         shell: python
   run-windows-commands:
     runs-on: windows-latest
+    needs: ['run-shell-commands'] # this jobs depends on run-shell-commands. it means depends job will finish first
     steps:
       - name: Director Powershell
         run: Get-Location
